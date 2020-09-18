@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <PackageIcon>gr.ico</PackageIcon>
     <AppName>GRLauncher</AppName>
+    <ApplicationIcon>gr.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +22,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Delete Files=" $(OutDir)$(AppName).runtimeconfig.dev.json"/>
+    <Delete Files=" $(OutDir)$(AppName).runtimeconfig.dev.json" />
   </Target>
 </Project>
