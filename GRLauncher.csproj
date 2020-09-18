@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWpf>true</UseWpf>
+    <Nullable>enable</Nullable>
+    <PackageIcon>gr.ico</PackageIcon>
+    <AppName>GRLauncher</AppName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="gr.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nostrum" Version="1.2.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="gr.ico" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Delete Files=" $(OutDir)$(AppName).runtimeconfig.dev.json"/>
+  </Target>
+</Project>
